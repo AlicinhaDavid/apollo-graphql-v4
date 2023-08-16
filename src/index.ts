@@ -24,21 +24,42 @@ const products = [
   },
 ];
 
+const categories = [
+  {
+    name: "Clothing",
+  },
+  {
+    name: "Female",
+  },
+  {
+    name: "Male",
+  },
+  {
+    name: "Kids",
+  },
+];
+
 const typeDefs = `#graphql
+    type Category {
+      name: String
+    }
+
     type Product {
-        name: String
-        description: String
-        price: String
+      name: String
+      description: String
+      price: String
     }
 
     type Query {
-        products: [Product]
+      products: [Product],
+      categories: [Category]
     }
 `;
 
 const resolvers = {
   Query: {
     products: () => products,
+    categories: () => categories
   },
 };
 
