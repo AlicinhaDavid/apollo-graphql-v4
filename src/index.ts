@@ -78,29 +78,54 @@ const categories = [
   },
 ];
 
+const pictures = [
+  {
+    source:
+      "https://unsplash.com/pt-br/fotografias/SdR2wW-v4PE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+  },
+  {
+    source:
+      "https://unsplash.com/pt-br/fotografias/ylHcWlrMlzs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+  },
+  {
+    source:
+      "https://unsplash.com/pt-br/fotografias/3we24FcjVAk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+  },
+  {
+    source:
+      "https://unsplash.com/pt-br/fotografias/BN760VSO8yM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+  },
+];
+
 const typeDefs = `#graphql
-    type Category {
-      name: String
-      products: [Product]
-    }
+  type Picture {
+    source: String
+  }
 
-    type Product {
-      name: String
-      description: String
-      price: String
-      categories: [Category]
-    }
+  type Category {
+    name: String
+    products: [Product]
+  }
 
-    type Query {
-      products: [Product],
-      categories: [Category]
-    }
+  type Product {
+    name: String
+    description: String
+    price: String
+    categories: [Category]
+  }
+
+  type Query {
+    products: [Product],
+    categories: [Category]
+    pictures: [Picture]
+  }
 `;
 
 const resolvers = {
   Query: {
     products: () => products,
     categories: () => categories,
+    pictures: ()=> pictures
   },
 };
 
