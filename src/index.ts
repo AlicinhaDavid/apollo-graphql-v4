@@ -11,6 +11,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/SdR2wW-v4PE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
+    color: { label: "orange" },
   },
   {
     name: "Black pants",
@@ -21,6 +22,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/ylHcWlrMlzs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
+    color: { label: "black" },
   },
   {
     name: "Red pants",
@@ -31,6 +33,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/3we24FcjVAk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
+    color: { label: "red" },
   },
   {
     name: "Blue T-Shirt",
@@ -41,6 +44,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/BN760VSO8yM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
+    color: { label: "blue" },
   },
 ];
 
@@ -126,15 +130,28 @@ const pictures = [
 ];
 
 const colors = [
-  { label: "orange" },
-  { label: "black" },
-  { label: "red" },
-  { label: "blue" },
+  {
+    label: "orange",
+    produtos: [{ name: "Orange pants" }],
+  },
+  {
+    label: "black",
+    produtos: [{ name: "Black pants" }],
+  },
+  {
+    label: "red",
+    produtos: [{ name: "Red pants" }],
+  },
+  {
+    label: "blue",
+    produtos: [{ name: "Blue T-Shirt" }],
+  },
 ];
 
 const typeDefs = `#graphql
   type Color {
     label: String
+    produtos: [Product]
   }
 
   type Picture {
@@ -153,6 +170,7 @@ const typeDefs = `#graphql
     price: String
     categories: [Category]
     picture: Picture
+    color: Color
   }
 
   type Query {
@@ -168,7 +186,7 @@ const resolvers = {
     products: () => products,
     categories: () => categories,
     pictures: () => pictures,
-    colors: () => colors
+    colors: () => colors,
   },
 };
 
