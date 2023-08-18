@@ -140,32 +140,6 @@ const pictures = [
   },
 ];
 
-const colors = [
-  {
-    label: "orange",
-    produtos: [
-      {
-        name: "Orange pants",
-      },
-      {
-        name: "Orange Wool Sweater",
-      },
-    ],
-  },
-  {
-    label: "black",
-    produtos: [{ name: "Black pants" }],
-  },
-  {
-    label: "red",
-    produtos: [{ name: "Red pants" }],
-  },
-  {
-    label: "blue",
-    produtos: [{ name: "Blue T-Shirt" }],
-  },
-];
-
 const typeDefs = `#graphql
   type Color {
     label: String
@@ -195,7 +169,6 @@ const typeDefs = `#graphql
     products: [Product]
     categories: [Category]
     pictures: [Picture]
-    colors: [Color]
   }
 `;
 
@@ -204,7 +177,6 @@ const resolvers = {
     products: () => products,
     categories: () => categories,
     pictures: () => pictures,
-    colors: () => colors,
   },
 };
 
