@@ -14,6 +14,17 @@ const products = [
     color: { label: "orange" },
   },
   {
+    name: "Orange Wool Sweater",
+    description: "Confy Orange Wool Sweater",
+    price: "100.0",
+    categories: [{ name: "Clothing" }, { name: "Female" }],
+    picture: {
+      source:
+        "https://unsplash.com/pt-br/fotografias/SdR2wW-v4PE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+    },
+    color: { label: "orange" },
+  },
+  {
     name: "Black pants",
     description: "Social Black pants",
     price: "125.0",
@@ -132,7 +143,14 @@ const pictures = [
 const colors = [
   {
     label: "orange",
-    produtos: [{ name: "Orange pants" }],
+    produtos: [
+      {
+        name: "Orange pants",
+      },
+      {
+        name: "Orange Wool Sweater",
+      },
+    ],
   },
   {
     label: "black",
