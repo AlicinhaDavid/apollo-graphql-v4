@@ -11,7 +11,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/SdR2wW-v4PE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
-    color: { label: "orange" },
+    color: "ORANGE",
   },
   {
     name: "Orange Wool Sweater",
@@ -22,7 +22,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/SdR2wW-v4PE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
-    color: { label: "orange" },
+    color: "ORANGE",
   },
   {
     name: "Black pants",
@@ -33,7 +33,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/ylHcWlrMlzs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
-    color: { label: "black" },
+    color: "BLACK",
   },
   {
     name: "Red pants",
@@ -44,7 +44,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/3we24FcjVAk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
-    color: { label: "red" },
+    color: "RED",
   },
   {
     name: "Blue T-Shirt",
@@ -55,7 +55,7 @@ const products = [
       source:
         "https://unsplash.com/pt-br/fotografias/BN760VSO8yM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     },
-    color: { label: "blue" },
+    color: "BLUE",
   },
 ];
 
@@ -141,9 +141,11 @@ const pictures = [
 ];
 
 const typeDefs = `#graphql
-  type Color {
-    label: String
-    produtos: [Product]
+  enum Color {
+    ORANGE
+    BLACK
+    RED
+    BLUE
   }
 
   type Picture {
