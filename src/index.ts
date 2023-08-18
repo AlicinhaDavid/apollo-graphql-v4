@@ -96,32 +96,47 @@ const categories = [
 
 const pictures = [
   {
-    source: "https://unsplash.com/pt-br/fotografias/SdR2wW-v4PE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+    source:
+      "https://unsplash.com/pt-br/fotografias/SdR2wW-v4PE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     product: {
-      name: "Orange pants"
+      name: "Orange pants",
     },
   },
   {
-    source: "https://unsplash.com/pt-br/fotografias/ylHcWlrMlzs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+    source:
+      "https://unsplash.com/pt-br/fotografias/ylHcWlrMlzs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     product: {
-      name: "Black pants"
+      name: "Black pants",
     },
   },
   {
-    source: "https://unsplash.com/pt-br/fotografias/3we24FcjVAk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+    source:
+      "https://unsplash.com/pt-br/fotografias/3we24FcjVAk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     product: {
-      name: "Red pants"
+      name: "Red pants",
     },
   },
   {
-    source: "https://unsplash.com/pt-br/fotografias/BN760VSO8yM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+    source:
+      "https://unsplash.com/pt-br/fotografias/BN760VSO8yM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
     product: {
-      name: "Blue T-Shirt"
+      name: "Blue T-Shirt",
     },
   },
 ];
 
+const colors = [
+  { label: "orange" },
+  { label: "black" },
+  { label: "red" },
+  { label: "blue" },
+];
+
 const typeDefs = `#graphql
+  type Color {
+    label: String
+  }
+
   type Picture {
     source: String
     product: Product
@@ -141,9 +156,10 @@ const typeDefs = `#graphql
   }
 
   type Query {
-    products: [Product],
+    products: [Product]
     categories: [Category]
     pictures: [Picture]
+    colors: [Color]
   }
 `;
 
@@ -151,7 +167,8 @@ const resolvers = {
   Query: {
     products: () => products,
     categories: () => categories,
-    pictures: ()=> pictures
+    pictures: () => pictures,
+    colors: () => colors
   },
 };
 
