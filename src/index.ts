@@ -169,6 +169,7 @@ const typeDefs = `#graphql
 
   type Query {
     products: [Product]
+    productsByDescription(productDescription: String): [Product]
     categories: [Category]
     pictures: [Picture]
   }
@@ -177,6 +178,10 @@ const typeDefs = `#graphql
 const resolvers = {
   Query: {
     products: () => products,
+    productsByDescription: (root, args, context, info) =>
+      products.filter((product) => {
+        return product.description.includes(args.productDescription);
+      }),
     categories: () => categories,
     pictures: () => pictures,
   },
