@@ -61,6 +61,32 @@ query ExampleQuery($productDescription: String) {
 }
 ```
 
+#### productsByCategory
+#### _Query_
+---
+``` graphql
+query ExampleQuery($categoryName: String) {
+  productsByCategory(categoryName: $categoryName) {
+    name
+    description
+    price
+    picture {
+      source
+    }
+    categories {
+      name
+    }
+    color
+  }
+}
+```
+#### _Variables_
+---
+```graphql
+{
+  "categoryName": "Clothing" 
+}
+```
 ### Categories queries
 
 #### categories
