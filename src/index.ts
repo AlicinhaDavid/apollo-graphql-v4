@@ -2,7 +2,7 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
 const products = [
-  { 
+  {
     id: "P001",
     name: "Orange pants",
     description: "Modern Orange pants",
@@ -177,6 +177,7 @@ const typeDefs = `#graphql
     products: [Product]
     productsByDescription(productDescription: String): [Product]
     productsByCategory(categoryName: String): [Product]
+    productById(productId: String): Product,
     categories: [Category]
     pictures: [Picture]
   }
@@ -194,6 +195,10 @@ const resolvers = {
         return product.categories.find((category) => {
           return category.name === args.categoryName;
         });
+      }),
+    productById: (root, args, context, info) =>
+      products.find((product) => {
+        return product.id === args.productId;
       }),
     categories: () => categories,
     pictures: () => pictures,
