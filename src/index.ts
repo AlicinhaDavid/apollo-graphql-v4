@@ -2,7 +2,8 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
 const products = [
-  {
+  { 
+    id: "P001",
     name: "Orange pants",
     description: "Modern Orange pants",
     price: "130.0",
@@ -14,6 +15,7 @@ const products = [
     color: "ORANGE",
   },
   {
+    id: "P002",
     name: "Orange Wool Sweater",
     description: "Confy Orange Wool Sweater",
     price: "100.0",
@@ -25,6 +27,7 @@ const products = [
     color: "ORANGE",
   },
   {
+    id: "P003",
     name: "Black pants",
     description: "Social Black pants",
     price: "125.0",
@@ -36,6 +39,7 @@ const products = [
     color: "BLACK",
   },
   {
+    id: "P004",
     name: "Red pants",
     description: "Confy Red pants",
     price: "150.0",
@@ -47,6 +51,7 @@ const products = [
     color: "RED",
   },
   {
+    id: "P005",
     name: "Blue T-Shirt",
     description: "Confy Blue T-Shirt",
     price: "40.0",
@@ -159,6 +164,7 @@ const typeDefs = `#graphql
   }
 
   type Product {
+    id: String
     name: String
     description: String
     price: String
