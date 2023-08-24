@@ -1,15 +1,9 @@
-import { products } from "./datasets/products";
 import { categories } from "./datasets/categories";
 import { pictures } from "./datasets/pictures";
 import { getProducts } from "./use-cases/getProducts";
 import { getProductsByDescription } from "./use-cases/getProductsByDescription";
 import { getProductsByCategory } from "./use-cases/getProductsByCategory";
-
-const getProductById = (id: string) => {
-  products.find((product) => {
-    return product.id === id;
-  });
-};
+import { getProductById } from "./use-cases/getProductById";
 
 const getCategories = () =>{
   return categories
