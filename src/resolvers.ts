@@ -1,10 +1,7 @@
 import { products } from "./datasets/products";
 import { categories } from "./datasets/categories";
 import { pictures } from "./datasets/pictures";
-
-const getProducts = () =>{
-  return products
-}
+import { getProducts } from "./use-cases/getProducts";
 
 const getProductsByDescription = (description: string) => {
   return products.filter((product) => {
