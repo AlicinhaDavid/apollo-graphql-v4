@@ -1,4 +1,6 @@
-import { categories, pictures, products } from "./dataset";
+import { products } from "./datasets/products";
+import { categories } from "./datasets/categories";
+import { pictures } from "./datasets/pictures";
 
 export const resolvers = {
   Query: {
