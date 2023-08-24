@@ -2,12 +2,7 @@ import { products } from "./datasets/products";
 import { categories } from "./datasets/categories";
 import { pictures } from "./datasets/pictures";
 import { getProducts } from "./use-cases/getProducts";
-
-const getProductsByDescription = (description: string) => {
-  return products.filter((product) => {
-    return product.description.includes(description);
-  });
-};
+import { getProductsByDescription } from "./use-cases/getProductsByDescription";
 
 const getProductsByCategory = (categoryName: string) => {
   return products.filter((product) => {
