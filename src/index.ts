@@ -1,44 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { products,categories,pictures } from "./dataset";
-
-const typeDefs = `#graphql
-  enum Color {
-    ORANGE
-    BLACK
-    RED
-    BLUE
-  }
-
-  type Picture {
-    source: String
-    product: Product
-  }
-
-  type Category {
-    name: String
-    products: [Product]
-  }
-
-  type Product {
-    id: String
-    name: String
-    description: String
-    price: String
-    categories: [Category]
-    picture: Picture
-    color: Color
-  }
-
-  type Query {
-    products: [Product]
-    productsByDescription(productDescription: String): [Product]
-    productsByCategory(categoryName: String): [Product]
-    productById(productId: String): Product,
-    categories: [Category]
-    pictures: [Picture]
-  }
-`;
+import { products, categories, pictures } from "./dataset";
+import { typeDefs } from "./typedefs";
 
 const resolvers = {
   Query: {
