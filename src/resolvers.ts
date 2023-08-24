@@ -1,13 +1,9 @@
-import { pictures } from "./datasets/pictures";
 import { getProducts } from "./use-cases/getProducts";
 import { getProductsByDescription } from "./use-cases/getProductsByDescription";
 import { getProductsByCategory } from "./use-cases/getProductsByCategory";
 import { getProductById } from "./use-cases/getProductById";
 import { getCategories } from "./use-cases/getCategories";
-
-const getPictures = () =>{
-  return pictures
-}
+import { getPictures } from "./use-cases/getPictures";
 
 export const resolvers = {
   Query: {
