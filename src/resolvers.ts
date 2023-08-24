@@ -10,7 +10,8 @@ export const resolvers = {
     products: getProducts(),
     productsByDescription: (root, args, context, info) =>
       getProductsByDescription(args.productDescription),
-    productsByCategory: (root, args, context, info) => getProductsByCategory(args.categoryName),
+    productsByCategory: (root, args, context, info) =>
+      getProductsByCategory(args.categoryName),
     productById: (root, args, context, info) => getProductById(args.productId),
     categories: getCategories(),
     pictures: getPictures(),
