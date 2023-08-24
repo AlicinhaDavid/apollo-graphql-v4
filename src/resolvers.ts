@@ -3,14 +3,7 @@ import { categories } from "./datasets/categories";
 import { pictures } from "./datasets/pictures";
 import { getProducts } from "./use-cases/getProducts";
 import { getProductsByDescription } from "./use-cases/getProductsByDescription";
-
-const getProductsByCategory = (categoryName: string) => {
-  return products.filter((product) => {
-    return product.categories.find((category) => {
-      return category.name === categoryName;
-    });
-  });
-};
+import { getProductsByCategory } from "./use-cases/getProductsByCategory";
 
 const getProductById = (id: string) => {
   products.find((product) => {
