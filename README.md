@@ -1,6 +1,7 @@
 # apollo-graphql-v4
 
 ![catalog's context](src/assets/Catalog.png)
+![Catalog and Stock's Architecture](src/assets/Stock_Catalog.png)
 
 ## Available queries in this project:
 
