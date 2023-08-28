@@ -4,6 +4,7 @@ import { getProductsByCategory } from "./use-cases/getProductsByCategory";
 import { getProductById } from "./use-cases/getProductById";
 import { getCategories } from "./use-cases/getCategories";
 import { getPictures } from "./use-cases/getPictures";
+import { createProduct } from "./use-cases/createProduct";
 
 export const resolvers = {
   Query: {
@@ -17,8 +18,6 @@ export const resolvers = {
     pictures: getPictures(),
   },
   Mutation: {
-    createProduct: (root, args, context, info) => {
-      return { ...args.product, id: "JSDJSKK1827828" };
-    },
+    createProduct: (root, args, context, info) => createProduct(args.product),
   },
 };
