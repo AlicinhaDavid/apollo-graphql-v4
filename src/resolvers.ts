@@ -16,4 +16,9 @@ export const resolvers = {
     categories: getCategories(),
     pictures: getPictures(),
   },
+  Mutation: {
+    createProduct: (root, args, context, info) => {
+      return { ...args.product, id: "JSDJSKK1827828" };
+    },
+  },
 };

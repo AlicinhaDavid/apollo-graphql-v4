@@ -34,4 +34,25 @@ export const typeDefs = `#graphql
     categories: [Category]
     pictures: [Picture]
   }
+
+  input CategoryProductContent {
+    name: String
+  }
+  input PictureProductContent{
+    source: String
+  }
+  
+  input ProductContent {
+    name: String
+    description: String
+    price: String
+    categories: [CategoryProductContent]
+    picture: PictureProductContent
+    color: Color
+  }
+
+  type Mutation {
+    createProduct(product: ProductContent): Product
+  }
+
 `;
