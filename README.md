@@ -1,6 +1,9 @@
 # apollo-graphql-v4
+## DDD Contexts
+![Catalog's context](src/assets/Catalog.png) 
+![Stock's context](src/assets/Stock.png)
 
-![catalog's context](src/assets/Catalog.png)
+## Architecture Map
 ![Catalog and Stock's Architecture](src/assets/Stock_Catalog.png)
 
 ## Available queries in this project:
